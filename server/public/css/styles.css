@@ -1,0 +1,37 @@
+html body{
+  background-color: #cae9fc;
+  font-family: Helvetica;
+}
+
+h1{
+color: #7C8700;
+margin-left: 3%;
+}
+h2{
+color: #EED39F;
+margin-left: 2%;
+}
+h3{
+color: #1a164c;
+margin-left: 2%;
+}
+h4{
+color: #7c4ae8;
+margin-left: 2%;
+}
+/*a:link */
+a:link{
+  color: #110D75;
+}
+/* visited link */
+a:visited {
+    color: green;
+}
+/* mouse over link */
+a:hover {
+    color: #FFD689;
+}
+/* selected link */
+a:active {
+    color: blue;
+}
