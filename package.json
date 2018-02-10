@@ -1,8 +1,7 @@
 {
-  "name": "dummyserver",
+  "name": "w2Calculator",
   "version": "1.0.0",
-  "description": "",
-  "main": "client.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +12,15 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdgregoire/weekendChallenge2Calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mdgregoire/weekendChallenge2Calculator/issues"
+  },
+  "homepage": "https://github.com/mdgregoire/weekendChallenge2Calculator#readme",
+  "description": ""
 }
