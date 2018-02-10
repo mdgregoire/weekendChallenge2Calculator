@@ -18,8 +18,8 @@ function doTheMath(array){
     else if (operator === '/'){
       total = x/y;
     }//end / if
-  console.log(total, 'total in doTheMath');
-  return total;
+  array[array.length-1].total = total;
+  return array;
 }//end doTheMath function
 
 module.exports = {math: doTheMath};
