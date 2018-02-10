@@ -2,14 +2,15 @@ console.log('js');
 
 $(document).ready(function(){
   console.log('JQ');
-  testRun ();
+  testGet ();
+  testPost ();
 
 });//end ready
 
 
 
 
-function testRun(){
+function testGet(){
   $.ajax({
     type: 'GET',
     url: '/calc'
@@ -20,6 +21,21 @@ function testRun(){
     console.log('get /calc failed', response);
   });
 }//end testRun Function
+
+function testPost(){
+  let input = 'testPostInput';
+  console.log(input, 'in testpost - input');
+
+  $.ajax({
+    type: 'POST',
+    url: '/calc/store',
+    data: {test: input}
+  }).done(function(response){
+    console.log('testPost success', response);
+  }).fail(function(response){
+    console.log('testPost fail', response);
+  });
+}//end testPost
 
 
 function printTest(){
