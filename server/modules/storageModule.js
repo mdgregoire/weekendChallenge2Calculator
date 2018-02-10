@@ -1,11 +1,12 @@
 
-let testArray = [];
+let historyArray = [];
 
 
-function pushArray(input){
-  console.log(input, 'input in storage module');
-  testArray.push(input);
-  console.log(testArray, 'testArray in storage module');
+function pushToArray(input){
+  historyArray.push(input);
+  console.log(historyArray, 'historyArray in storage module');
 }
 
-module.exports = {storageModule : pushArray};
+module.exports = {add : pushToArray,
+                  history : historyArray
+                  };
