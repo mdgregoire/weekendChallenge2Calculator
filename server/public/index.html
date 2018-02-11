@@ -11,17 +11,61 @@
     <h1>Weekend Challenge #2 - Calculator</h1>
     <section id = "inputs">
       <input class= "numberIn" type="number" id="x" placeholder="x">
-      <select id="operator" name="operator">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-      </select>
+        <select id="operator" name="operator">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
       <input class= "numberIn" type="number" id="y" placeholder="y">
-      <button type="button" id="submitButton">Submit</button>
-      <button type="button" id="clearButton">Clear All</button>
+        <button type="button" id="submitButton">Submit</button>
+        <button type="button" id="clearButton">Clear All</button>
+      <br>
     </section>
+    <section id="xButtons">
+      <button class="xInputButton" id="1" value="1">1</button>
+      <button class="xInputButton" id="2" value="2">2</button>
+      <button class="xInputButton" id="3" value="3">3</button>
+      <br>
+      <button class="xInputButton" id="4" value="4">4</button>
+      <button class="xInputButton" id="5" value="5">5</button>
+      <button class="xInputButton" id="6" value="6">6</button>
+      <br>
+      <button class="xInputButton" id="7" value="7">7</button>
+      <button class="xInputButton" id="8" value="8">8</button>
+      <button class="xInputButton" id="9" value="9">9</button>
+      <br>
+      <button class="xInputButton" id="clearXInputButton" value="C">C</button>
+      <button class="xInputButton" id="0" value="0">0</button>
+    </section>
+    <section id="operatorButtons">
+      <button class="operatorButton" id="+" value="+">+</button><br>
+      <button class="operatorButton" id="-" value="-">-</button><br>
+      <button class="operatorButton" id="*" value="*">*</button><br>
+      <button class="operatorButton" id="/" value="/">/</button><br>
+    </section>
+    <section id="yButtons">
+      <button class="yInputButton" id="1" value="1">1</button>
+      <button class="yInputButton" id="2" value="2">2</button>
+      <button class="yInputButton" id="3" value="3">3</button>
+      <br>
+      <button class="yInputButton" id="4" value="4">4</button>
+      <button class="yInputButton" id="5" value="5">5</button>
+      <button class="yInputButton" id="6" value="6">6</button>
+      <br>
+      <button class="yInputButton" id="7" value="7">7</button>
+      <button class="yInputButton" id="8" value="8">8</button>
+      <button class="yInputButton" id="9" value="9">9</button>
+      <br>
+      <button class="yInputButton" id="clearYInputButton" value="C">C</button>
+      <button class="yInputButton" id="0" value="0">0</button>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
     <section id="outputs">
+      <h2>History:</h2>
       <ul id="outputField"></ul>
     </section>
   </body>

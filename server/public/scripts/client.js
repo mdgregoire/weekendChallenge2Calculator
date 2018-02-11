@@ -1,14 +1,22 @@
-console.log('js');
-
 $(document).ready(function(){
-  console.log('JQ');
-
   $('#submitButton').on('click', function(){
     collectInput();
   });//end onclick submit button
   $('#clearButton').on('click', function(){
     clearInputs()
+    clearOutputs()
   });//end onclick clear button
+  $('.xInputButton').on('click', function(){
+    let numberToPassForXInputField = $(this).val();
+    xButtonInput(numberToPassForXInputField);
+  })//end xInputButton click
+  $('.yInputButton').on('click', function(){
+    let numberToPassForYInputField = $(this).val();
+    yButtonInput(numberToPassForYInputField);
+  })//end yInputButton click
+  $('.operatorButton').on('click', function(){
+    operatorButtonClick ($(this).val())
+  })//end operatorButton click
 });//end ready
 
 function collectInput(){
@@ -41,10 +49,18 @@ function calculateInput(){
 }//end calculateInput
 
 function clearInputs(){
-  $('#x').val(''),
-  $('#y').val(''),
-  $('#operator').val('')
+  $('#x').val('');
+  $('#y').val('');
+  $('#operator').val('');
 }//end clearInputs
+
+function clearOutputs(){
+  $('#outputField').empty();
+}//end clear outputs
+
+function operatorButtonClick(operator){
+  $('#operator').val(operator);
+}//end operatorButtonClick
 
 function writeToDom(array){
   console.log('in writeToDom', array);
@@ -57,3 +73,27 @@ function writeToDom(array){
     $('#outputField').append('<div class= "output">' + stringToAppend + '</div>');
   }//end for loop
 }//end write to DOM
+
+function xButtonInput(xInputNumber){
+  if(xInputNumber == 'C'){
+    $('#x').val('');
+  }//end if
+  else if ($('#x').val()){
+    $('#x').val($('#x').val() + xInputNumber);
+  }  //end elseif
+  else{
+    $('#x').val(xInputNumber);
+  }//end else
+}//end xButtonInput
+
+function yButtonInput(yInputNumber){
+  if(yInputNumber == 'C'){
+    $('#y').val('');
+  }//end if
+  else if ($('#y').val()){
+    $('#y').val($('#y').val() + yInputNumber);
+  }  //end elseif
+  else{
+    $('#y').val(yInputNumber);
+  }//end else
+}//end yButtonInput

@@ -8,7 +8,7 @@ color: #7C8700;
 margin-left: 3%;
 }
 h2{
-color: #EED39F;
+color: black;
 margin-left: 2%;
 }
 h3{
@@ -19,19 +19,20 @@ h4{
 color: #7c4ae8;
 margin-left: 2%;
 }
-/*a:link */
-a:link{
-  color: #110D75;
+.xInputButton{
+  float: left;
 }
-/* visited link */
-a:visited {
-    color: green;
+#xButtons{
+  float: left;
+  margin-right:70px
 }
-/* mouse over link */
-a:hover {
-    color: #FFD689;
+.yInputButton{
+  float: left;
 }
-/* selected link */
-a:active {
-    color: blue;
+#yButtons{
+  float: left;
+}
+#operatorButtons{
+  float: left;
+  margin-right:80px
 }
