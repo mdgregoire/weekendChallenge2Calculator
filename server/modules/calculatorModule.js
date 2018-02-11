@@ -22,7 +22,6 @@ function doTheMath(array){
 
   array[array.length-1].total = total;
 
-
   return array;
 }//end doTheMath function
 

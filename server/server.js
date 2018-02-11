@@ -1,4 +1,3 @@
-console.log('hello from server');
 
 const express = require('express');
 const app = express();
@@ -12,4 +11,4 @@ const calculatorRouter = require('./routers/calculatorRouter');
 app.use('/calc', calculatorRouter); // end point to calculatorRouter
 app.listen(port, function(){
   console.log(`server listening on port ${port}`);
-}); // end app listening
+}); // end app listen

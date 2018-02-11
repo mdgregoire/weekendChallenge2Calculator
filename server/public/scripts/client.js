@@ -13,14 +13,11 @@ $(document).ready(function(){
     yButtonInput($(this).val());
   })//end yInputButton click
   $('.operatorButton').on('click', function(){
-    operatorButtonClick ($(this).val())
+    operatorButtonClick($(this).val())
   })//end operatorButton click
   $('#outputField').on('click', '.individualOutput', function(){
     rerunHistory($(this).index('.individualOutput'));
   })//end individualOutput click
-
-
-
 });//end ready
 
 function collectInput(){
@@ -78,7 +75,7 @@ function rerunHistory(index){
   }).fail(function(response){
     console.log('collectInputPost fail', response);
   });
-}
+}//end rerunHistory
 
 function writeToDom(array){
   console.log('in writeToDom', array);

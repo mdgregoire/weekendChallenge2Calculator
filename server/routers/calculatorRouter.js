@@ -12,7 +12,6 @@ router.get('/', function(request, response) {
   response.send(storageModule.history);
 });// end get router
 
-
 router.post('/store', function(request, response){
   let routerPostInput = request.body;
   storageModule.add(routerPostInput);
@@ -24,6 +23,6 @@ router.post('/rerun', function(request, response){
   console.log(routerPostRerun, 'inrouterpostrerun');
   rerunModule.rerun(routerPostRerun);
   response.sendStatus(200);
-});
+});//end rerun router
 
 module.exports = router;
