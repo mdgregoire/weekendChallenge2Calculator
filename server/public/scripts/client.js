@@ -7,12 +7,10 @@ $(document).ready(function(){
     clearOutputs()
   });//end onclick clear button
   $('.xInputButton').on('click', function(){
-    let numberToPassForXInputField = $(this).val();
-    xButtonInput(numberToPassForXInputField);
+    xButtonInput($(this).val());
   })//end xInputButton click
   $('.yInputButton').on('click', function(){
-    let numberToPassForYInputField = $(this).val();
-    yButtonInput(numberToPassForYInputField);
+    yButtonInput($(this).val());
   })//end yInputButton click
   $('.operatorButton').on('click', function(){
     operatorButtonClick ($(this).val())
