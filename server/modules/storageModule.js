@@ -7,6 +7,8 @@ function pushToArray(input){
   console.log(historyArray, 'historyArray in storage module');
 }
 
+
+
 module.exports = {add : pushToArray,
                   history : historyArray
                   };

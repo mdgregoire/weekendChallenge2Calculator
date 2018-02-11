@@ -15,6 +15,12 @@ $(document).ready(function(){
   $('.operatorButton').on('click', function(){
     operatorButtonClick ($(this).val())
   })//end operatorButton click
+  $('#outputField').on('click', '.individualOutput', function(){
+    rerunHistory($(this).index('.individualOutput'));
+  })//end individualOutput click
+
+
+
 });//end ready
 
 function collectInput(){
@@ -59,6 +65,20 @@ function clearOutputs(){
 function operatorButtonClick(operator){
   $('#operator').val(operator);
 }//end operatorButtonClick
+
+function rerunHistory(index){
+  $.ajax({
+    type: 'POST',
+    url: '/calc/rerun',
+    data: {index: index
+          }
+  }).done(function(response){
+    console.log('collectInputPost success', response);
+    calculateInput();
+  }).fail(function(response){
+    console.log('collectInputPost fail', response);
+  });
+}
 
 function writeToDom(array){
   console.log('in writeToDom', array);
