@@ -78,9 +78,9 @@ function rerunHistory(index){
 }//end rerunHistory
 
 function writeToDom(array){
-  console.log('in writeToDom', array);
   clearInputs();
-  $('#outputField').empty();
+  clearOutputs()
+  // $('#outputField').empty();
   for (i=0; i<array.length; i++){
     let stringToAppend = '<li class = "individualOutput">';
     stringToAppend += array[i].x+' '+array[i].operator+' '+array[i].y;

@@ -8,7 +8,7 @@ const rerunModule = require('../modules/rerunModule');
 let total;
 
 router.get('/', function(request, response) {
-  total = calculatorModule.math(storageModule.history);
+  calculatorModule.math(storageModule.history);
   response.send(storageModule.history);
 });// end get router
 
@@ -20,7 +20,6 @@ router.post('/store', function(request, response){
 
 router.post('/rerun', function(request, response){
   let routerPostRerun = request.body;
-  console.log(routerPostRerun, 'inrouterpostrerun');
   rerunModule.rerun(routerPostRerun);
   response.sendStatus(200);
 });//end rerun router
