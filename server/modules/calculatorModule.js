@@ -19,9 +19,7 @@ function doTheMath(array){
       total = x/y;
     }//end / if
   console.log(total, 'total in doTheMath');
-
   array[array.length-1].total = total;
-
   return array;
 }//end doTheMath function
 

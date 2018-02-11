@@ -13,15 +13,18 @@ router.get('/', function(request, response) {
 });// end get router
 
 router.post('/store', function(request, response){
-  let routerPostInput = request.body;
-  storageModule.add(routerPostInput);
+  storageModule.add(request.body);
   response.sendStatus(200);
 });//end post store router
 
 router.post('/rerun', function(request, response){
-  let routerPostRerun = request.body;
-  rerunModule.rerun(routerPostRerun);
+  rerunModule.rerun(request.body);
   response.sendStatus(200);
-});//end rerun router
+});//end post rerun router
+
+router.delete('/store', function(request, response){
+  storageModule.delete(storageModule.history);
+  response.send(storageModule.history);
+})//end delete router
 
 module.exports = router;

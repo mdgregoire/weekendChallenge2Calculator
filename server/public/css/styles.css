@@ -19,12 +19,16 @@ h4{
 color: #7c4ae8;
 margin-left: 2%;
 }
+.numberIn{
+  width: 70px;
+}
+
 .xInputButton{
   float: left;
 }
 #xButtons{
   float: left;
-  margin-right:70px
+  margin-right:15px;
 }
 .yInputButton{
   float: left;
@@ -34,5 +38,5 @@ margin-left: 2%;
 }
 #operatorButtons{
   float: left;
-  margin-right:80px
+  margin-right:16px;
 }

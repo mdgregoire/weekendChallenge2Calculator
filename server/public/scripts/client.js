@@ -18,24 +18,10 @@ $(document).ready(function(){
   $('#outputField').on('click', '.individualOutput', function(){
     rerunHistory($(this).index('.individualOutput'));
   })//end individualOutput click
-});//end ready
-
-function collectInput(){
-  $.ajax({
-    type: 'POST',
-    url: '/calc/store',
-    data: {
-        x: $('#x').val(),
-        y: $('#y').val(),
-        operator: $('#operator').val()
-          }
-  }).done(function(response){
-    console.log('collectInputPost success', response);
-    calculateInput();
-  }).fail(function(response){
-    console.log('collectInputPost fail', response);
-  });
-}//end collectInput
+  $('#deleteButton').on('click', function(){
+    deleteHistory();
+  })//end deleteButton click
+});//end document ready
 
 function calculateInput(){
   $.ajax({
@@ -59,6 +45,36 @@ function clearOutputs(){
   $('#outputField').empty();
 }//end clear outputs
 
+function collectInput(){
+  $.ajax({
+    type: 'POST',
+    url: '/calc/store',
+    data: {
+        x: $('#x').val(),
+        y: $('#y').val(),
+        operator: $('#operator').val()}
+  }).done(function(response){
+    console.log('collectInputPost success', response);
+    calculateInput();
+  }).fail(function(response){
+    console.log('collectInputPost fail', response);
+  });
+}//end collectInput
+
+function deleteHistory(){
+  console.log('in deleteHistory');
+  $.ajax({
+    type: 'DELETE',
+    url: '/calc/store',
+    data: {} //no idea if i need this or not...could not find much documentation on DELETE, seems to work though
+  }).done(function(response){
+    console.log('deleteHistory success', response);
+    writeToDom(response);
+  }).fail(function(response){
+    console.log('deleteHistory fail', response);
+  });
+}//end deleteHistory
+
 function operatorButtonClick(operator){
   $('#operator').val(operator);
 }//end operatorButtonClick
@@ -67,8 +83,7 @@ function rerunHistory(index){
   $.ajax({
     type: 'POST',
     url: '/calc/rerun',
-    data: {index: index
-          }
+    data: {index: index}
   }).done(function(response){
     console.log('collectInputPost success', response);
     calculateInput();
@@ -80,7 +95,6 @@ function rerunHistory(index){
 function writeToDom(array){
   clearInputs();
   clearOutputs()
-  // $('#outputField').empty();
   for (i=0; i<array.length; i++){
     let stringToAppend = '<li class = "individualOutput">';
     stringToAppend += array[i].x+' '+array[i].operator+' '+array[i].y;
