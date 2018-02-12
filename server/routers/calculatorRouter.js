@@ -5,7 +5,6 @@ const router = express.Router();
 const calculatorModule = require('../modules/calculatorModule');
 const storageModule = require('../modules/storageModule');
 const rerunModule = require('../modules/rerunModule');
-let total;
 
 router.get('/', function(request, response) {
   calculatorModule.math(storageModule.history);
